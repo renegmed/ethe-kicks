@@ -1,5 +1,22 @@
 
 
+04 Frontend initial setup
+
+    $ npm install --save next next-routes react react-dom
+
+    $ mkdir pages
+
+    update package.json to use mocha for testing
+
+            "main": "pages/index.js",
+
+            "scripts": {
+                "test": "mocha",
+                "dev": "next dev"
+            },
+
+    $ npm run dev
+
 03 to test
 
         update package.json to use mocha for testing
