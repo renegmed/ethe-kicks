@@ -1,9 +1,18 @@
 
 
+03 to test
+
+        update package.json to use mocha for testing
+            "scripts": {
+                "test": "mocha"
+            },
+
+        $ npm test
+
 02 to compile:
         $ cd ethereum
         $ node compile.js
-        
+
    produces ABI json files:
         build/Campaign.json
         build/CampaignFactory.json     
