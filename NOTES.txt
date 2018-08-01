@@ -1,6 +1,14 @@
 
 
-1. CampaignFactory is used for user to interact in order to create new Campaign. 
+02 to compile:
+        $ cd ethereum
+        $ node compile.js
+        
+   produces ABI json files:
+        build/Campaign.json
+        build/CampaignFactory.json     
+
+01 CampaignFactory is used for user to interact in order to create new Campaign. 
    In Remix, you run first CampaignFactory to create a Campain. Then get and copy the address of that Campaign
 
    Then switch to Campaign. Then paste the campaign address to input field address 
