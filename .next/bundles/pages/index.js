@@ -19,7 +19,8 @@ module.exports = {"assembly":{".code":[{"begin":247,"end":594,"name":"PUSH","val
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__build_CampaignFactory_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__build_CampaignFactory_json__);
 
 
-var instance = new __WEBPACK_IMPORTED_MODULE_0__web3__["a" /* default */].eth.Contract(JSON.parse(__WEBPACK_IMPORTED_MODULE_1__build_CampaignFactory_json___default.a.interface), 'ADDRESS OF DEPLOYED CAMPAIGN FACTORY');
+var instance = new __WEBPACK_IMPORTED_MODULE_0__web3__["a" /* default */].eth.Contract(JSON.parse(__WEBPACK_IMPORTED_MODULE_1__build_CampaignFactory_json___default.a.interface), '0xfd9FcbdBbD845CC4e5c9E99FB021dc2EB0267E98' //'ADDRESS OF DEPLOYED CAMPAIGN FACTORY'
+);
 /* harmony default export */ __webpack_exports__["a"] = (instance);
 
 /***/ }),
@@ -42,7 +43,8 @@ if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
   web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(window.web3.currentProvider);
 } else {
   // We are on the server OR the user is not running metamask
-  var provider = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a.providers.HttpProvider('URL OF INFURA HERE');
+  var provider = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a.providers.HttpProvider('https://rinkeby.infura.io/v3/79a18556aa274a0a9a5ee7304da13e34' //'URL OF INFURA HERE'
+  );
   web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(provider);
 }
 
@@ -58297,17 +58299,12 @@ function extend() {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ethereum_factory__ = __webpack_require__("./ethereum/factory.js");
-
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ethereum_factory__ = __webpack_require__("./ethereum/factory.js");
 var _jsxFileName = "/Users/rene/learn/blockchain/ethereum/ethereum-solidity/kickstart2/pages/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -58336,49 +58333,29 @@ function (_Component) {
   }
 
   _createClass(CampaignIndex, [{
-    key: "componentDidMount",
-    value: function () {
-      var _componentDidMount = _asyncToGenerator(
-      /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
-        var campaigns;
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return __WEBPACK_IMPORTED_MODULE_2__ethereum_factory__["a" /* default */].methods.getDeployedCampaigns().call();
-
-              case 2:
-                campaigns = _context.sent;
-                console.log(campaigns);
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      return function componentDidMount() {
-        return _componentDidMount.apply(this, arguments);
-      };
-    }()
-  }, {
     key: "render",
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 15
         }
-      }, "Campaigns Index!");
+      });
+    }
+  }], [{
+    key: "getInitialProps",
+    // this function is nextjs requirement for efficiency
+    value: function getInitialProps() {
+      var campaigns = __WEBPACK_IMPORTED_MODULE_1__ethereum_factory__["a" /* default */].methods.getDeployedCampaigns().call();
+      console.log(campaigns);
+      return {
+        campaigns: campaigns
+      };
     }
   }]);
 
   return CampaignIndex;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (CampaignIndex);
     (function (Component, route) {
