@@ -1,0 +1,8 @@
+
+
+1. CampaignFactory is used for user to interact in order to create new Campaign. 
+   In Remix, you run first CampaignFactory to create a Campain. Then get and copy the address of that Campaign
+
+   Then switch to Campaign. Then paste the campaign address to input field address 
+   
+
